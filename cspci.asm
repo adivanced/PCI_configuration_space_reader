@@ -4,7 +4,7 @@
 
 ;MACROS ________________________________________________________________________________________________________________________________
 
-; a macro, written for simplicity. All PCI bus communications done in one macro.
+; a macro, written for simplicity. All PCI bus communications done in this macro.
 %macro call_r_pci 4
 	mov ax, word [%1]
 	mov bx, word [%2]
@@ -14,6 +14,11 @@
 	call pci_config_read_word
 %endmacro
 
+; a macro used to add an ignored Vendor ID for the process of the PCI bus scan. In order to add one, follow the instructions, given at the line 126
+%macro ignore 1
+	cmp word [pcidwrd], %1
+	je _inc_bsf
+%endmacro
 
 ;______________________________________________________________________________________________________________________________________
 
@@ -118,11 +123,9 @@ scanloop:
 	push di
 	call_r_pci pci_bus, pci_slot, pci_func, 0	
 	pop di
-	cmp word [pcidwrd], 0xffff
-	je _inc_bsf
-	cmp word [pcidwrd], 0  			; if your PCI bus returns something other from 0xffff or 0x0000 for nonexistent devices, add the following 2 lines:
-	je _inc_bsf						; cmp word [pcidwrd], <your_value>
-	mov eax, dword [pcidwrd]		; je _inc_bsf
+	ignore 0xffff	; if your PCI bus returns something other than 0x0000 or 0xffff in the Device id field for nonexistent devices, just type your own "ignore <your value>" right below the initial ignores.
+	ignore 0x0000		  			
+	mov eax, dword [pcidwrd]
 	mov dword [scanarray+di], eax
 	mov al, byte [pci_slot]
 	mov ah, byte [pci_func]
