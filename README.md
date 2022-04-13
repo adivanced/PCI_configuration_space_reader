@@ -8,7 +8,7 @@ Run the make utility to assemble the .img file. Then insert a USB/Floppy drive i
 
 Be aware of the fact that USB 3.0 drives are not guaranteed to work properly with this software.
 
-After writing your image file onto your drive, proceed to the BIOS, and put your drive on top of the boot priority list. If using UEFI, do not forget to enable the legacy boot mode first.
+After writing your image file onto your drive, proceed to the BIOS, and put your drive on top of the boot priority list. If using UEFI, enable the legacy boot mode first.
 
 Note that this software is not bootable without your UEFI supporting the legacy boot mode.
 
