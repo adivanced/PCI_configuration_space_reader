@@ -670,6 +670,7 @@ outstrD		  db "Expansion ROM BAR 0x00000000", 0,
 outstrE		  db "Capabilities ptr 0x00", 0,
 outstrF		  db "Max lat 0x00 Min Grant 0x00 INT PIN 0x00 INT line 0x00", 0
 
+; Strings for outputing info about the PCI device header of type 0x1
 
 outstr7_1 db "Secondary lat timer 0x00 Subordinate Bus num 0x00 Secondary Bus num 0x00 Primary Bus num 0x00", 0
 outstr8_1 db "Secondary status 0x0000 I/O limit 0x00 I/O Base 0x00", 0
@@ -682,6 +683,7 @@ outstrE_1 db "Capability ptr 0x00", 0
 outstrF_1 db "Expansion ROM BAR 0x00000000", 0
 outstr10_1 db "Bridge control 0x0000 INT PIN 0x00 INT line 0x00", 0
 
+; Strings for outputing info about the PCI device header of type 0x2
 
 outstr5_2 db "CardBus Socket/ExCa BAR 0x0000000", 0
 outstr6_2 db "Secondary Status 0x0000 Offset of Capabilities list 0x00", 0
@@ -697,6 +699,8 @@ outstrF_2 db "I/O Limit 1    0x00000000", 0
 ; use outstr10_1
 outstr11_2 db "Subsys Vendor ID 0x0000 Subsys Device ID 0x0000", 0
 outstr12_2 db "16-bit PC Card legacy mode BAR 0x00000000", 0
+
+; Device list strings
 
 fstr db "List of all detected PCI devices. Select with arrows&Enter", 0
 lstr db "Page 0x00/0x00", 0
