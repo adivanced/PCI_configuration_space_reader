@@ -14,7 +14,7 @@ int 0x13
 
 jmp 0x7e00
 
-; these two functions are here just for the rational use of the first program's 512 bytes.
+; these functions are here just for the rational use of the first program's 512 bytes.
 
 cvt2hex: 	; a function to convert a number into hexadecimal string di = a string we write into(its end), ax = number, also uses bx
 	std
