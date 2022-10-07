@@ -224,7 +224,6 @@ proc_dev:
 	call cvt2hex
 
 	mov al, byte [pcidwrd+2]
-	and al, 01111111b
 	mov di, outstr4+19
 	call cvt2hex
 
