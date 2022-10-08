@@ -1,4 +1,4 @@
-; a macro used to add an ignored Vendor ID for the process of the PCI bus scan. In order to add one, follow the instructions, given at the line 14
+; a macro used to add an ignored Vendor ID for the process of the PCI bus scan. In order to add one, follow the instructions, given at the line 23
 %macro ignore 1
 	cmp word [pcidwrd], %1
 	je _inc_bsf
