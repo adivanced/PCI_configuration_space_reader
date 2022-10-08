@@ -474,7 +474,7 @@ call newln
 call_r_pci pci_bus, pci_slot, pci_func, 0x10
 
 mov eax, dword [pcidwrd]
-mov di, outstr5_2+32
+mov di, outstr5_2+33
 call cvt2hex_32
 
 mov si, outstr5_2
@@ -685,7 +685,7 @@ outstr10_1 db "Bridge control 0x0000 INT PIN 0x00 INT line 0x00", 0
 
 ; Strings for outputing info about the PCI device header of type 0x2
 
-outstr5_2 db "CardBus Socket/ExCa BAR 0x0000000", 0
+outstr5_2 db "CardBus Socket/ExCa BAR 0x00000000", 0
 outstr6_2 db "Secondary Status 0x0000 Offset of Capabilities list 0x00", 0
 outstr7_2 db "CardBus latency timer 0x00 Subordinate Bus num 0x00 CardBus Bus num 0x00 PCI Bus num 0x00", 0
 outstr8_2 db "Memory BAR0    0x00000000", 0
